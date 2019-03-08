@@ -1,7 +1,6 @@
 # uwsgi
 
 [![Build Status](https://travis-ci.org/parkoview/ansible-role-uwsgi.svg?branch=master)](https://travis-ci.org/parkoview/ansible-role-uwsgi)
-[![Build Status](https://travis-ci.org/parkoview/ansible-role-uwsgi.svg?branch=develop)](https://travis-ci.org/parkoview/ansible-role-uwsgi)
 [![Ansible Role](https://img.shields.io/ansible/role/12481.svg)](https://galaxy.ansible.com/parkoview/uwsgi/)
 
 Install uwsgi package.
