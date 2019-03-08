@@ -8,6 +8,8 @@
 
 Install uwsgi package.
 
+Forked and mutilated from infOpen/ansible-role-uwsgi. While cleverly written the original role prevents passing multiple environment variables to apps because of the dummy yaml parser that uwsgi uses. libyaml could be another way to circumvent the issue. Anyway, this fork uses a list instead of a dict to generate an ini configuration file.
+
 ## Requirements
 
 This role requires Ansible 2.2 or higher,
@@ -51,13 +53,10 @@ uwsgi_service_name: 'uwsgi'
 # Configuration vars
 uwsgi_configuration_available_path: "{{ _uwsgi_configuration_available_path }}"
 uwsgi_configuration_enabled_path: "{{ _uwsgi_configuration_enabled_path }}"
-uwsgi_configuration_log_path: "{{ _uwsgi_configuration_log_path }}"
-uwsgi_configuration_run_path: "{{ _uwsgi_configuration_run_path }}"
 uwsgi_configuration_owner: 'root'
 uwsgi_configuration_group: 'root'
 uwsgi_configuration_mode: '0640'
 uwsgi_apps: []
-uwsgi_apps_defaults: "{{ _uwsgi_apps_defaults }}"
 
 # Handler management
 uwsgi_restart_handler_enabled: True
@@ -75,21 +74,6 @@ _uwsgi_packages:
 # Configuration management
 _uwsgi_configuration_available_path: '/etc/uwsgi/apps-available'
 _uwsgi_configuration_enabled_path: '/etc/uwsgi/apps-enabled'
-_uwsgi_configuration_log_path: '/var/log/uwsgi'
-_uwsgi_configuration_run_path: '/var/run/uwsgi'
-_uwsgi_apps_defaults:
-  uwsgi:
-    autoload: true
-    master: true
-    workers: 2
-    no-orphans: true
-    pidfile: "{{ uwsgi_configuration_run_path ~ '/%(deb-confnamespace)/%(deb-confname)/pid' }}"
-    socket: "{{ uwsgi_configuration_run_path ~ '/%(deb-confnamespace)/%(deb-confname)/socket' }}"
-    logto: "{{ uwsgi_configuration_log_path ~ '/%(deb-confnamespace)/%(debconfname).log' }}"
-    chmod-socket: 660
-    log-date: true
-    uid: www-data
-    gid: www-data
 ```
 
 ## Dependencies
@@ -101,7 +85,7 @@ None
 ``` yaml
 - hosts: servers
   roles:
-    - { role: infOpen.uwsgi }
+    - { role: parkoview.uwsgi }
 ```
 
 ## License
