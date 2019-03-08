@@ -1,6 +1,7 @@
 ---
 
 galaxy_info:
+  role_name: uwsgi
   author: 'Alexandre Chaussier'
   description: 'Ansible role to manage uwsgi installation and configuration'
   company: 'Infopen (http://www.infopen.pro)'
