@@ -1,3 +1,6 @@
 # {{ ansible_managed }}
 
-{{ uwsgi_apps_defaults | combine(item.settings, recursive=True) | to_nice_yaml }}
+[uwsgi]
+{% for line in item.settings %}
+{{ line }}
+{% endfor %}

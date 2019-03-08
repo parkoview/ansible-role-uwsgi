@@ -5,18 +5,17 @@
 - name: 'CONFIG | Create configuration files'
   template:
     src: "{{ role_path }}/templates/app.yaml.j2"
-    dest: "{{ uwsgi_configuration_available_path }}/{{ item.name }}.yaml"
+    dest: "{{ uwsgi_configuration_available_path }}/{{ item.name }}.ini"
     owner: "{{ uwsgi_configuration_owner }}"
     group: "{{ uwsgi_configuration_group }}"
     mode: "{{ uwsgi_configuration_mode }}"
   notify: 'HANDLER | Restart uwsgi'
   with_items: "{{ uwsgi_apps }}"
 
-
 - name: 'CONFIG | Activate needed applications'
   file:
-    src: "{{ uwsgi_configuration_available_path }}/{{ item.name }}.yaml"
-    dest: "{{ uwsgi_configuration_enabled_path }}/{{ item.name }}.yaml"
+    src: "{{ uwsgi_configuration_available_path }}/{{ item.name }}.ini"
+    dest: "{{ uwsgi_configuration_enabled_path }}/{{ item.name }}.ini"
     state: 'link'
   notify: 'HANDLER | Restart uwsgi'
   when: "item.enabled | default(False)"

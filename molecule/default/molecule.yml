@@ -37,13 +37,12 @@ provisioner:
           - name: 'foo'
             enabled: True
             settings:
-              uwsgi:
-                chdir: '/home/foobar/app'
-                gid: 'www-data'
-                plugins: 'python'
-                uid: 'foobar'
-                virtualenv: '/home/foobar/venv'
-                wsgi-file: '/home/foobar/app/foo.py'
+              - chdir=/home/foobar/app
+              - gid=www-data
+              - plugins=python
+              - uid=foobar
+              - virtualenv=/home/foobar/venv
+              - wsgi-file=/home/foobar/app/foo.py
     host_vars: {}
 scenario:
   name: 'default'
