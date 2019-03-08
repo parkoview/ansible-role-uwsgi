@@ -1,10 +1,8 @@
 # uwsgi
 
-[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-uwsgi/master.svg?label=travis_master)](https://travis-ci.org/infOpen/ansible-role-uwsgi)
-[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-uwsgi/develop.svg?label=travis_develop)](https://travis-ci.org/infOpen/ansible-role-uwsgi)
-[![Updates](https://pyup.io/repos/github/infOpen/ansible-role-uwsgi/shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-uwsgi/)
-[![Python 3](https://pyup.io/repos/github/infOpen/ansible-role-uwsgi/python-3-shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-uwsgi/)
-[![Ansible Role](https://img.shields.io/ansible/role/12481.svg)](https://galaxy.ansible.com/infOpen/uwsgi/)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-uwsgi/master.svg?label=travis_master)](https://travis-ci.org/parkoview/ansible-role-uwsgi.svg?branch=master)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-uwsgi/develop.svg?label=travis_develop)](https://travis-ci.org/parkoview/ansible-role-uwsgi.svg?branch=develop)
+[![Ansible Role](https://img.shields.io/ansible/role/12481.svg)](https://galaxy.ansible.com/parkoview/uwsgi/)
 
 Install uwsgi package.
 
