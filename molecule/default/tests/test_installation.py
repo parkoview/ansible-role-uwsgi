@@ -73,15 +73,6 @@ def test_processes(host):
     assert len(host.process.filter(user='foobar')) == 3
 
 
-def test_socket(host):
-    """
-    Test socket properties
-    """
-
-    socket = host.socket("unix:///var/run/uwsgi/app/foo/socket")
-    #assert socket.is_listening
-
-
 def test_service(host):
     """
     Test service started and enabled
